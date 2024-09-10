@@ -1,4 +1,4 @@
-def send_email(message, recipient,*, sender ='university.help@gmail.com' ):
+def send_email(message, recipient, *, sender='university.help@gmail.com'):
     #sender = "university.help@gmail.com"
     if ('@' or ".com" or ".ru" or ".net") not in (recipient and sender): #and '@' not in (recipient or sender):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
