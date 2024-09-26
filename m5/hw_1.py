@@ -54,10 +54,15 @@ class House:
             return False
 
     def __add__(self, other):
-        if isinstance(other, int):
-            return f'Назавание: {self.name}, колличество этажей: {self.number_of_floors + other}'
+        if isinstance(other, House):
+            self.number_of_floors += other.number_of_floors
+            return self
+        elif isinstance(other, int):
+            self.number_of_floors += other
+            return self
         else:
             return ('Не цисло')
+
 
     def __radd__(self, other):
         if isinstance(other, int):
@@ -65,16 +70,8 @@ class House:
         else:
             return ('Не цисло')
 
-    def __iadd__(self, other):
-        if isinstance(other, House):
-            self.number_of_floors += other.number_of_floors
-            return self#f'Назавание: {self.name}, колличество этажей: {self.number_of_floors + other}'
-        if isinstance(other, int):
-            self.number_of_floors += other
-            return self
-        else:
-            return ('Не цисло')
-
+    def __iadd__(self, other:int):
+        return self.__add__(other)
 
 house = House('ЖК Эльбрус', 30)
 house.go_to(45)
