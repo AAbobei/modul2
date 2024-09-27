@@ -18,40 +18,76 @@ class House:
                 print(i + 1)
 
     def __eq__(self, other):
-        if self.number_of_floors == other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors == other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors == other:
+                return True
+            else:
+                return False
 
     def __lt__(self, other):
-        if self.number_of_floors < other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors < other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors < other:
+                return True
+            else:
+                return False
 
     def __le__(self, other):
-        if self.number_of_floors <= other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors <= other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors <= other:
+                return True
+            else:
+                return False
 
     def __gt__(self, other):
-        if self.number_of_floors > other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors > other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors > other:
+                return True
+            else:
+                return False
 
     def __ge__(self, other):
-        if self.number_of_floors >= other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors >= other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors >= other:
+                return True
+            else:
+                return False
 
     def __ne__(self, other):
-        if self.number_of_floors != other:
-            return True
-        else:
-            return False
+        if isinstance(other, House):
+            if self.number_of_floors != other:
+                return True
+            else:
+                return False
+        elif isinstance(other, int):
+            if self.number_of_floors != other:
+                return True
+            else:
+                return False
 
     def __add__(self, other):
         if isinstance(other, House):
