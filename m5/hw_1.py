@@ -62,10 +62,7 @@ class House:
 
 
     def __radd__(self, other):
-        if isinstance(other, int):
-            return f'Назавание: {self.name}, колличество этажей: {self.number_of_floors + other}'
-        else:
-            return ('Не цисло')
+        return self.__add__(other)
 
     def __iadd__(self, other:int):
         return self.__add__(other)
